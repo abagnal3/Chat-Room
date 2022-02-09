@@ -26,9 +26,8 @@ def handle_clien(client):
             broadcast(f'{alias} has disconnected!'.encode('utf-8'))
             aliases.remove(alias)
             break
+            
 # Main function to receive the clients connection
-
-
 def receive():
     while True:
         print('The server is listening ...')
