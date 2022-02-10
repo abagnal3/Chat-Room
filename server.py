@@ -13,12 +13,13 @@ def broadcast(message):
     for client in clients:
         client.send(message)
 
-def handle_clien(client):
+def handle_client(client):
     while True:
         try:
             message = client.recv(1024) # This is the most data that can be sent
             broadcast(message)
-            except:
+            
+        except:
             index = clients.index(client)
             clients.remove(client)
             client.close()
@@ -45,8 +46,8 @@ def receive():
 
 # Stops the server
 def terminate():
-    server.shutdown(socket.SHUT_RDWR)
-    server.close()
+   server.shutdown(socket.SHUT_RDWR)
+   server.close()
 
 if __name__ == "__main__":
     receive()
